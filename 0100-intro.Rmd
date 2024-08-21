@@ -1,0 +1,49 @@
+# Introduction {#intro}
+
+`r if(identical(gitbook_on, FALSE))knitr::asis_output(paste0("This report is available as pdf and as an online interactive report at ", params$report_url, ". We recommend viewing online as the web-hosted html version contains more features and is more easily navigable."))`
+
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("<br>")}`
+
+## Line Breaks {-}
+Here is an example of how to insert an empty line between paragraphs. We do it using two blank lines...
+
+This is the paragraph that follows the empty line.
+
+Additionally, writers should investigate the impacts of different header levels (ex. First level (#) or Second level
+(##) or third (###)) as well as before and after figures/tables on spacing before and after the headers so we produce as
+professional looking documents as possible.  There are idiosyncrasies with what happens for each above and below so that
+should be tested by building the documents in both formats (`html` and `pdf`) and viewing the output. Here is a test
+with a second level header with no empty line above and no empty line below.
+## Header with no number {-}
+
+It negates the header... wow.
+
+If we put blank lines above the header however...
+
+## Another numbered Header
+No spacing or `<br>` above this line.  
+
+Here is a `fpr_kable` with a cross reference to Table \@ref(tab:fpr-kable-nr).
+```{r nice-tab, eval = TRUE}
+knitr::kable(
+  head(iris, 10), caption = 'Here is a nice kable!',
+  booktabs = TRUE
+)
+```
+This is what happens with multiple empty lines but no `<br>` inserted directly after a figure...
+
+
+```{r fpr-kable-nr, eval = T}
+head(iris, 20) %>% 
+  fpr::fpr_kable(
+  caption_text = 'Here is a fpr_kable with no cross-ref and the scroll set to not happen when pdf built.',
+  scroll = gitbook_on)
+```
+
+<br>
+
+But if we put a `<br>` below the figure with blank lines either side of our text we are good to go.
+
+Test.
+
+

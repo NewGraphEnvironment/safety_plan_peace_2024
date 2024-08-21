@@ -1,0 +1,93 @@
+--- 
+title: "My Bookdown Template"
+author: |
+ |
+ | Prepared for
+
+ |
+ |
+ | Prepared by
+ | Al Irvine, B.Sc., R.P.Bio. and Lucy Schick, B.Sc.
+ | New Graph Environment Ltd.
+
+date: |
+ |
+ | Version 0.0.6 `r format(Sys.Date(), "%Y-%m-%d")`
+toc-title: Table of Contents
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+          includes:
+            in_header: header.html
+params:
+  repo_url: 'https://github.com/NewGraphEnvironment/mybookdown-template/'
+  report_url: 'https://newgraphenvironment.github.io/mybookdown-template'
+  update_packages: FALSE
+  update_bib: TRUE
+  gitbook_on: TRUE
+nocite: |
+  @irvine2024NewGraphEnvironmentfpr
+documentclass: book
+bibliography: "`r if (params$update_bib) { rbbt::bbt_write_bib('references.bib', overwrite = TRUE); 'references.bib' } else 'references.bib'`"
+biblio-style: apalike
+link-citations: no
+github-repo: rstudio/bookdown-demo
+description: "My Description."
+lof: true
+
+---
+
+
+```{r jquery, echo=FALSE, eval=FALSE}
+#see https://github.com/NewGraphEnvironment/mybookdown-template/issues/16
+htmltools::tagList(rmarkdown::html_dependency_jquery())
+```
+
+
+```{r setup, echo=identical(params$gitbook_on, TRUE), include = TRUE}
+knitr::opts_chunk$set(echo=identical(params$gitbook_on, TRUE), message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
+# knitr::knit_hooks$set(webgl = hook_webgl)
+options(scipen=999)
+options(knitr.kable.NA = '--') #'--'
+options(knitr.kable.NAN = '--')
+```
+
+```{r settings-gitbook, eval= params$gitbook_on}
+photo_width <- "100%"
+font_set <- 11
+
+```
+
+```{r settings-paged-html, eval= identical(params$gitbook_on, FALSE)}
+photo_width <- "80%"
+font_set <- 9
+```
+
+
+```{r source}
+source('scripts/packages.R')
+source('scripts/functions.R')
+source('scripts/staticimports.R')
+
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+# Acknowledgement {.front-matter .unnumbered}
+
+
+Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cultures and livelihoods living interconnected with our ecosystems for many thousands of years. 
+
+
+
+```{js, logo-header, echo = FALSE, eval= T}
+title=document.getElementById('header');
+title.innerHTML = '<img src="fig/nge-full_white.png" alt="NewGraph">' + title.innerHTML
+```
+
