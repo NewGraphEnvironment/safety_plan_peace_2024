@@ -54,3 +54,7 @@ size: 8.5in 11in;
 /* .caption p {
    font-size: 10px;
 }*/
+
+.page-break {
+  page-break-before: always;
+}
