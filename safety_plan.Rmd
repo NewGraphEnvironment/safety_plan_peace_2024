@@ -133,7 +133,7 @@ The latest version of this pdf can be downloaded [here](`r knitr::asis_output(li
 
 <br>
 
-The main goal of the fieldwork is baseline monitoring using electrofishing with crews from McLeod Lake. We will be at the six permitted electrofishing sites most of the time.  In addition we may spend some time with fish passage (Phase 1) and Phase 2 (Habitat Confirmation) assessments in areas of not only the Parsnip watershed group but also the Carp and Crooked watershed groups. A summary of the electrofishing sites to be potentially assessed is included as Table \@ref(tab:tab-electrofishing-sites). A summary of new assessment sites for fish passage assessment and habitat confirmation to be potentially assessed is included as Table \@ref(tab:tab-electrofishing-sites) with a kml (google earth) and gpx (garmin) file downloadable [here](`r knitr::asis_output(link_kml)`). 
+The main goal of the fieldwork is baseline monitoring using electrofishing with crews from McLeod Lake. We will be at the six permitted electrofishing sites most of the time.  Additionally, we may conduct fish passage (Phase 1) and habitat confirmation (Phase 2) assessments in the Carp and Crooked watershed groups as well. A summary of the potential sites for fish passage assessments, habitat confirmation assessments, and electrofishing is provided in Table \@ref(tab:tab-electrofishing-sites), with kml (google earth) and gpx (garmin) files downloadable [here](`r knitr::asis_output(link_kml)`). 
 
 <br>
 
@@ -263,6 +263,18 @@ ggmap::ggmap(mybasemap)
 
 <br>
 
+## Emergency Response Plan {.unnumbered}
+
+New Graph's detailed emergency response procedures can be found [here](https://www.newgraphenvironment.com/hsp/plans-and-assessments.html#emergency-response-plan-erp-and-procedures). These procedures should be reviewed and an emergency response plan should be completed for each job site. Our Emergency Responce Plan template can be downloaded [here](https://github.com/NewGraphEnvironment/hsp/blob/master/data/form_templates/ERP_template.pdf).
+
+<br>
+
+## Driving {.unnumbered}
+
+We will be driving on forest service roads where it is essential to exercise caution and adhere strictly to all radio use protocols to ensure our safety. Proper communication on these roads helps prevent accidents by keeping everyone informed about vehicle movements and road conditions. Please review the [resource road safety](https://www.newgraphenvironment.com/hsp/safe-work-procedures-and-practices.html#resource-road-safety) and [radio use](https://www.newgraphenvironment.com/hsp/safe-work-procedures-and-practices.html#radio-use) sections of our Health and Safety plan so that everyone stays safe. 
+
+<br>
+
 ## Field Plan {.unnumbered}
 
 The main goal of the fieldwork is baseline monitoring using electrofishing with crews from McLeod Lake. We will be at the 5 or 6 permitted electrofishing sites most of the time.  In addition we may spend some time with fish passage assessments in areas of not only the Parsnip watershed group but also the Carp and Crooked watershed groups.
@@ -335,7 +347,7 @@ knitr::include_graphics("fig/flow-check-in-fail.png")
 
 ```
 
-`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>")`
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br>")`
 
 ```{r load-mergin, results='hide', eval = F}
 
