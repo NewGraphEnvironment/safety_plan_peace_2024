@@ -201,7 +201,7 @@ tab_eq_pers <-  readr::read_csv(
   filter(!is.na(eq_pers_standard)) |>  
   arrange(eq_safety) |>  ##have these first on the list
   select(eq_item)  |>  
-  make_untidy_table() |>  
+  my_untidy_table() |>  
   rename(`Personal Equipment Checklist` = eq_item)
 
 my_caption = 'Personal Equipment Checklist'
@@ -225,7 +225,7 @@ tab_eq_crew <-  readr::read_csv(
   filter(is.na(eq_pers_standard)) |>  
   arrange(eq_safety) |>  
   select(eq_item)  |>  
-  make_untidy_table() |>  
+  my_untidy_table() |>  
   rename(`Crew Equipment Checklist` = eq_item)
 
 my_caption = 'Crew Equipment Checklist'
