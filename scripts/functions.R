@@ -1,25 +1,3 @@
-
-##function to trim up sheet and get names (was previously source from altools package)
-at_trim_xlsheet <- function(df, column_last = ncol(df)) {
-  df %>%
-    dplyr::select(1:column_last) %>% ##get rid of the extra columns.  should be more abstract
-    # janitor::row_to_names(which.max(complete.cases(.))) %>%
-    janitor::clean_names() %>%
-    janitor::remove_empty(., which = "rows")
-}
-
-
-
-##this is for the pf projects - chooses the top row - untidy input!
-at_trim_xlsheet2 <- function(df, column_last = ncol(df)) {
-  df %>%
-    dplyr::select(1:column_last) %>% ##get rid of the extra columns.  should be more abstract
-    janitor::row_to_names(which.max(complete.cases(.))) %>%
-    janitor::clean_names() %>%
-    janitor::remove_empty(., which = "rows")
-}
-
-
 ## add a line to the function to make the comments column wide enough
 make_html_tbl <- function(df) {
   # df2 <- df %>%
