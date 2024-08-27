@@ -54,7 +54,6 @@ options(knitr.kable.NAN = '--')
 
 source('scripts/packages.R')
 source('scripts/staticimports.R')
-source('scripts/functions.R')
 
 name_project_number <- '2024-073'
 name_project_name <- 'sern-peace-fish-passage'
@@ -90,7 +89,7 @@ projects <-  readxl::excel_sheets(path = "../onboarding/data/equipment_contacts_
              path = "../onboarding/data/equipment_contacts_safetylog.xlsx",
              .name_repair = janitor::make_clean_names) %>% 
   purrr::set_names(janitor::make_clean_names(names(.))) %>% 
-  purrr::map(at_trim_xlsheet) |>  #this is the clean run of this function
+  purrr::map(fpr::fpr_sheet_trim) |>  #this is the clean run of this function at_trim_xlsheet
   purrr::map(plyr::colwise(type.convert))
 
 ```
