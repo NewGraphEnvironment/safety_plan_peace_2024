@@ -73,6 +73,8 @@ hotel2 <- "6596 Dawson Road, Prince George, BC V2K 5Y4"
 vehicle1 <- '2013 Toyota Tundra black w/flatdeck and yellow can-am quad'
 vehicle2 <- '2006 Pontiac Vibe red'
 ```
+
+
 ```{r info-hospitals}
 hospital_name <- 'University Hospital of Northern British Columbia'
 hospital_phone <- '250-565-2000'
@@ -190,7 +192,7 @@ tab_crew |>
 
 ## Equipment Checklists {.unnumbered}
 
-```{r table-equipment}
+```{r table-equipment, eval=TRUE}
 
 ## personal equipment 
 
@@ -241,7 +243,7 @@ tab_eq_crew |>
 
 ## Nearest Hospitals {.unnumbered}
 
-```{r hospital-1, fig.cap=my_caption, fig.width=6}
+```{r hospital-1, fig.cap=my_caption, fig.width=6, eval=TRUE}
 my_caption = paste(hospital_name, hospital_address, hospital_phone, sep = ' - ')
 
 ##register google key defined in 'R/private_info.R' file
@@ -253,10 +255,19 @@ mybasemap <- ggmap::get_map(location = hospital_address,
                      zoom = 16,
                     maptype = "roadmap")  
 
-ggmap::ggmap(mybasemap)
-  # geom_point(data = geocode(hospital_address), 
-  #            aes(x = lon, y = lat, colour = "black", stroke = 10), #https://stackoverflow.com/questions/54803891/custom-shape-in-ggplot-geom-point
-  #            show.legend = F)
+# Extract the center coordinates from the map object
+center_lon <- attr(mybasemap, "bb")$ll.lon + (attr(mybasemap, "bb")$ur.lon - attr(mybasemap, "bb")$ll.lon) / 2
+center_lat <- attr(mybasemap, "bb")$ll.lat + (attr(mybasemap, "bb")$ur.lat - attr(mybasemap, "bb")$ll.lat) / 2
+
+# Plot the map with the hospital symbol at the center
+ggmap::ggmap(mybasemap) +
+  geom_text(aes(x = center_lon, y = center_lat), 
+            label = "H", 
+            size = 10, 
+            colour = "red", 
+            fontface = "bold")
+
+
 
 ```
 
@@ -447,41 +458,53 @@ zip::zipr(paste0("docs/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m
 
 <!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br>")` -->
 
-```{r map-prep, eval=F}
+```{r map-prep, fig.cap=my_caption, eval=TRUE}
+
+my_caption = 'Map of potential sampling areas.'
+
+# set a buffer for the area of interest
+aoi_buffer <- 0.01
+
 ##register google key defined in 'R/private_info.R' file
 ggmap::register_google(key = Sys.getenv('GOOG_API_KEY'))
 
 #define the area of the base map by using a bounding box 
-mybasemap <- ggmap::get_map(location = c(left = table_sites |>  pull(long) |>  min()-0.01, 
-                                    bottom = table_sites |>  pull(lat) |>  min()-0.01,
-                                    right = table_sites |>  pull(long) |>  max()+0.01,
-                                    top = table_sites |>  pull(lat) |>  max()+0.01),
-                     source = "google",
-                     zoom = 8,
-                    maptype = "hybrid")
-
-
-
-#define the area of the base map by using the middle. 
-# mybasemap <- ggmap::get_map(location = c(lon = table_sites |>  pull(long) |>  mean(),
-#                                          lat = table_sites |>  pull(lat) |>  mean())
-#                             source = "google",
-#                             zoom = "auto",
-#                             maptype = "hybrid")
+mybasemap <- ggmap::get_map(
+  location = c(left = table_sites |> pull(long) |> min()-aoi_buffer, 
+               bottom = table_sites |> pull(lat) |> min()-aoi_buffer,
+               right = table_sites |> pull(long) |> max()+aoi_buffer,
+               top = table_sites |> pull(lat) |> max()+aoi_buffer),
+  source = "google",
+  zoom = 9,
+  maptype = "roadmap")
 
 
 mymap <- ggmap::ggmap(mybasemap) + 
   geom_point(data = table_sites, 
-             aes(x = long, y = lat, colour = color),
+             aes(x = long, y = lat, colour = "red"),
              show.legend = F)
-  # ggsflabel::geom_sf_label(data = table_sites, 
-  #                          aes(x = long, y = lat, label = name),
-  #                          force = 100, 
-  #                          nudge_x = -2)
+
+
+mymap <- ggmap::ggmap(mybasemap) + 
+  geom_point(data = table_sites , 
+             aes(x = long, y = lat,
+                 color = 'red'),
+             show.legend = F) +
+
+  ggrepel::geom_label_repel(
+    # wrangle for more informative "label" but not used as too much detail for map
+    data = table_sites |> 
+               dplyr::mutate(label = paste(id, stream_name, sep = " - ")),
+                            aes(x = long, y = lat, label = id),
+                                box.padding = 0.5, 
+                            point.padding = 0.1,
+                            max.overlaps = 30,
+               size = 2.5
+                            ) 
 
 mymap
 
-# Figure 1. Map of potential sampling areas. High priority sites in red and moderate priority in green.
+
 ```
 
 <br>
@@ -552,36 +575,6 @@ read_csv("data/fish_sampling_sites.csv") |>
                               font_size = font_set)
 ```
 
-<br>
-
-```{r tab-priority-sites, eval = F}
-
-## For 2024, I am turning this off because these are the same sites as for electrofishing, so made just one table. (see above code chunk)
-
-
-table_sites |>  
-  sf::st_drop_geometry() |>  
-  arrange(id) |>  
-  select(id, 
-         Stream = gnis_stream_name, 
-         my_priority,
-         # watershed_code_50k, 
-         # watershed_code_20k, 
-         utm_easting, 
-         utm_northing, 
-         my_priority_comments
-         ) |>  
-  kable(caption = 'Potential Phase 1 and Phase 2 Assessment locations.', booktabs = T) |> 
-  kableExtra::kable_styling(c("condensed"),
-                            full_width = T,
-                            font_size = font_set)
-  # kableExtra::column_spec(column = c(7), width_max = '1.5in') |>  
-  # # kableExtra::column_spec(column = c(3,4,7), width_min = '1.0in') |>  
-  # kableExtra::column_spec(column = c(8), width_max = '2.0in')
-```
-
-
-<br>
 
 
 # References {.unnumbered}
