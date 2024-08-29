@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
-<Schema name="sites_sern_peace_fish_passage_20240827" id="sites_sern_peace_fish_passage_20240827">
+<Schema name="sites_sern_peace_fish_passage_20240829" id="sites_sern_peace_fish_passage_20240829">
 	<SimpleField name="id" type="int"></SimpleField>
 	<SimpleField name="stream_name" type="string"></SimpleField>
 	<SimpleField name="utm_zone" type="int"></SimpleField>
@@ -15,10 +15,10 @@
 	<SimpleField name="long" type="float"></SimpleField>
 	<SimpleField name="lat" type="float"></SimpleField>
 </Schema>
-<Folder><name>sites_sern_peace_fish_passage_20240827</name>
+<Folder><name>sites_sern_peace_fish_passage_20240829</name>
   <Placemark>
 	<name>125000</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">125000</SimpleData>
 		<SimpleData name="stream_name">tributary to Parsnip River</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -36,7 +36,7 @@
   </Placemark>
   <Placemark>
 	<name>125179</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">125179</SimpleData>
 		<SimpleData name="stream_name">Unnamed tributary to Missinka River</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -54,7 +54,7 @@
   </Placemark>
   <Placemark>
 	<name>125180</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">125180</SimpleData>
 		<SimpleData name="stream_name">tributary to Missinka River</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -72,7 +72,7 @@
   </Placemark>
   <Placemark>
 	<name>125231</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">125231</SimpleData>
 		<SimpleData name="stream_name">tributary to Table River</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -90,7 +90,7 @@
   </Placemark>
   <Placemark>
 	<name>125261</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">125261</SimpleData>
 		<SimpleData name="stream_name">Fern Creek</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -108,7 +108,7 @@
   </Placemark>
   <Placemark>
 	<name>198667</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">198667</SimpleData>
 		<SimpleData name="stream_name">Tsatchuka Creek</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -126,7 +126,7 @@
   </Placemark>
   <Placemark>
 	<name>198668</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">198668</SimpleData>
 		<SimpleData name="stream_name">Tributary to McLeod Lake</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
@@ -144,7 +144,7 @@
   </Placemark>
   <Placemark>
 	<name>198692</name>
-	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240827">
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240829">
 		<SimpleData name="id">198692</SimpleData>
 		<SimpleData name="stream_name">Tributary to Kerry Lake</SimpleData>
 		<SimpleData name="utm_zone">10</SimpleData>
