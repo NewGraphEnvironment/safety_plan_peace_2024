@@ -96,21 +96,6 @@ projects <-  readxl::excel_sheets(path = "../onboarding/data/equipment_contacts_
 
 ```
 
-```{r  tab-overview, eval= F}
-# turned eval = off!!!!
-
-## I think we could probably remove this, doesn't to be used for anything and turned off...
-tab_overview <- projects |>  
-  pluck('projects') |>  
-  filter(`project` == name_project_complete) |>  
-  select(`project`)
-
-tab_overview |>  
-  kable() |>  
-  kableExtra::kable_styling(c("condensed", "responsive"),
-                              full_width = T,
-                              font_size = font_set)
-```
 
 ```{r settings-gitbook, eval= gitbook_on}
 photo_width <- "100%"
@@ -478,11 +463,6 @@ mybasemap <- ggmap::get_map(
   zoom = 9,
   maptype = "roadmap")
 
-
-mymap <- ggmap::ggmap(mybasemap) + 
-  geom_point(data = table_sites, 
-             aes(x = long, y = lat, colour = "red"),
-             show.legend = F)
 
 
 mymap <- ggmap::ggmap(mybasemap) + 
