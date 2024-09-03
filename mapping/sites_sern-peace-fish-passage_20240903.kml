@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="sites_sern_peace_fish_passage_20240903" id="sites_sern_peace_fish_passage_20240903">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="stream_name" type="string"></SimpleField>
+	<SimpleField name="utm_zone" type="int"></SimpleField>
+	<SimpleField name="utm_easting" type="int"></SimpleField>
+	<SimpleField name="utm_northing" type="int"></SimpleField>
+	<SimpleField name="bt_network_km" type="float"></SimpleField>
+	<SimpleField name="bt_spawning_km" type="float"></SimpleField>
+	<SimpleField name="bt_rearing_km" type="float"></SimpleField>
+	<SimpleField name="watershed_group_code" type="string"></SimpleField>
+	<SimpleField name="pscis_assessment_comment" type="string"></SimpleField>
+	<SimpleField name="long" type="float"></SimpleField>
+	<SimpleField name="lat" type="float"></SimpleField>
+</Schema>
+<Folder><name>sites_sern_peace_fish_passage_20240903</name>
+  <Placemark>
+	<name>125000</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">125000</SimpleData>
+		<SimpleData name="stream_name">tributary to Parsnip River</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">577541</SimpleData>
+		<SimpleData name="utm_northing">6038215</SimpleData>
+		<SimpleData name="bt_network_km">13.4</SimpleData>
+		<SimpleData name="bt_spawning_km">2.3</SimpleData>
+		<SimpleData name="bt_rearing_km">4.8</SimpleData>
+		<SimpleData name="watershed_group_code">PARS</SimpleData>
+		<SimpleData name="pscis_assessment_comment">High priority candidate for restoration. Good habitat.  Surveyed upstream continuosly for 350 m to beaver influenced wetland area where walking became difficult.  Then stream was visited again upstream at 1.6 km upstream from crossing then again at approximately 2.5 km upstream of crossing.  Undercut banks provide areas of deep cover ad Large woody debris is scattered througout. Overhanging vegetationalso provides cover througout.  Pools observed were somewhat shallow but were preseetevery 20 - 30 m or so.  Minnowtrapping conducted upstream and downstream of crossing.  Electrofishing conducted downstream of the crossing.  No fish captured upstream of the culvert. First beaver dam located approximately 330m upstream of the culvert.</SimpleData>
+		<SimpleData name="long">-121.803063353279</SimpleData>
+		<SimpleData name="lat">54.4856321678425</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.803063353279,54.4856321678425,770.52331424082</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>125179</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">125179</SimpleData>
+		<SimpleData name="stream_name">Unnamed tributary to Missinka River</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">570307</SimpleData>
+		<SimpleData name="utm_northing">6052836</SimpleData>
+		<SimpleData name="bt_network_km">2.6</SimpleData>
+		<SimpleData name="bt_spawning_km">0</SimpleData>
+		<SimpleData name="bt_rearing_km">0.9</SimpleData>
+		<SimpleData name="watershed_group_code">PARS</SimpleData>
+		<SimpleData name="pscis_assessment_comment">High priority candidate for restoration with habitat for rearing and overwintering upstream.  Surveyed upstream for 520 m with no barriers to fish passage present.  Bull trout and rainbow recorded upstream. Some deep pools for overwintering and rearing.  Large woody debris and undercut banks throughout. Sections of gravel suitable for spawning.  Good flow.  Surveyed downstream for 360 m. No barriers observed and none likely downstream of surveyed section due to gradients.  Abundant large woody debris and gravels suitable for spawning.</SimpleData>
+		<SimpleData name="long">-121.911202637054</SimpleData>
+		<SimpleData name="lat">54.6180646183997</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.911202637054,54.6180646183997,777.379876944588</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>125180</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">125180</SimpleData>
+		<SimpleData name="stream_name">tributary to Missinka River</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">569664</SimpleData>
+		<SimpleData name="utm_northing">6053048</SimpleData>
+		<SimpleData name="bt_network_km">3.8</SimpleData>
+		<SimpleData name="bt_spawning_km">0</SimpleData>
+		<SimpleData name="bt_rearing_km">1.3</SimpleData>
+		<SimpleData name="watershed_group_code">PARS</SimpleData>
+		<SimpleData name="pscis_assessment_comment">High priority candidate for restoration. Good habitat.  Surveyed upstream of PSCIS crossing 125186 for a distance of 515 m.  Good flow and abundant cover.  Large woody debris and pools throughout.  Frequet pockets of gravel suitable for spawning. Good candidate.</SimpleData>
+		<SimpleData name="long">-121.921106672802</SimpleData>
+		<SimpleData name="lat">54.6200603823399</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.921106672802,54.6200603823399,780.800092205073</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>125231</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">125231</SimpleData>
+		<SimpleData name="stream_name">tributary to Table River</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">549962</SimpleData>
+		<SimpleData name="utm_northing">6065140</SimpleData>
+		<SimpleData name="bt_network_km">3.4</SimpleData>
+		<SimpleData name="bt_spawning_km">0.1</SimpleData>
+		<SimpleData name="bt_rearing_km">0.4</SimpleData>
+		<SimpleData name="watershed_group_code">PARS</SimpleData>
+		<SimpleData name="pscis_assessment_comment">High priority candidate for restoration. Good habitat.  Surveyed for 600m to new bridge (modelled crossing 16603641).  Some deep pools and bounlders, udercut banks, gravels throughout.  Abundant large wody debris throughout.  Some debris steps from 30 - 70 cms high.  No barriers.  Rainbow trout known upstream (FIDQ 2020). Good candidate for rehabilitation.</SimpleData>
+		<SimpleData name="long">-122.224130296426</SimpleData>
+		<SimpleData name="lat">54.7310562108804</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.224130296426,54.7310562108804,751.997634330397</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>125261</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">125261</SimpleData>
+		<SimpleData name="stream_name">Fern Creek</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">534600</SimpleData>
+		<SimpleData name="utm_northing">6067770</SimpleData>
+		<SimpleData name="bt_network_km">48.3</SimpleData>
+		<SimpleData name="bt_spawning_km">4.3</SimpleData>
+		<SimpleData name="bt_rearing_km">14.4</SimpleData>
+		<SimpleData name="watershed_group_code">PARS</SimpleData>
+		<SimpleData name="pscis_assessment_comment">Two additional culverts at 0.9m diameter.</SimpleData>
+		<SimpleData name="long">-122.462359989649</SimpleData>
+		<SimpleData name="lat">54.7559802153286</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.462359989649,54.7559802153286,729.26295554479</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>198667</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">198667</SimpleData>
+		<SimpleData name="stream_name">Tsatchuka Creek</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">500641</SimpleData>
+		<SimpleData name="utm_northing">6089777</SimpleData>
+		<SimpleData name="bt_network_km">87.6</SimpleData>
+		<SimpleData name="bt_spawning_km">12.4</SimpleData>
+		<SimpleData name="bt_rearing_km">18.8</SimpleData>
+		<SimpleData name="watershed_group_code">CARP</SimpleData>
+		<SimpleData name="pscis_assessment_comment">Grate on inlet and beaver influenced wetland upstream.  Inlet blocked by beaver debris with beaver trap on inlet.  Potentially good candidate for leveler to maintain beaver activity without attempting to remove the animals. Ministry of Transportation chris_culvert_id: 1997066. 13:04:57</SimpleData>
+		<SimpleData name="long">-122.989984554109</SimpleData>
+		<SimpleData name="lat">54.9549375547892</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.989984554109,54.9549375547892,682.239735865437</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>198668</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">198668</SimpleData>
+		<SimpleData name="stream_name">Tributary to McLeod Lake</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">501971</SimpleData>
+		<SimpleData name="utm_northing">6087814</SimpleData>
+		<SimpleData name="bt_network_km">9.5</SimpleData>
+		<SimpleData name="bt_spawning_km">0</SimpleData>
+		<SimpleData name="bt_rearing_km">0.6</SimpleData>
+		<SimpleData name="watershed_group_code">CARP</SimpleData>
+		<SimpleData name="pscis_assessment_comment">Abundant gravels, suitable for spawning upstream. Although flows are minimal, the streams does still have water.  Models as having over 3 km of habitat upstream below 5%. Although no fish are recorded as present upstream it seems highly likely that this would be a fish bearing stream. Outlet drop is 80cm.  Steep section of pipe at the inlet recorded as inlet drop. Ministry of Transportation chris_culvert_id: 1996852. 13:40:04</SimpleData>
+		<SimpleData name="long">-122.969239132171</SimpleData>
+		<SimpleData name="lat">54.9372947156407</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.969239132171,54.9372947156407,683.099968878234</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>198692</name>
+	<ExtendedData><SchemaData schemaUrl="#sites_sern_peace_fish_passage_20240903">
+		<SimpleData name="id">198692</SimpleData>
+		<SimpleData name="stream_name">Tributary to Kerry Lake</SimpleData>
+		<SimpleData name="utm_zone">10</SimpleData>
+		<SimpleData name="utm_easting">511735</SimpleData>
+		<SimpleData name="utm_northing">6059316</SimpleData>
+		<SimpleData name="bt_network_km">12.4</SimpleData>
+		<SimpleData name="bt_spawning_km">0</SimpleData>
+		<SimpleData name="bt_rearing_km">2.3</SimpleData>
+		<SimpleData name="watershed_group_code">CRKD</SimpleData>
+		<SimpleData name="pscis_assessment_comment">Nice little stream with decent flow for this time of year. Pockets of gravel throughout and healthy shrub and mixed riparian. Fish presence unknown, but seems likely due to proximity to Kerry lake with low gradients. 17:14:13</SimpleData>
+		<SimpleData name="long">-122.817997681286</SimpleData>
+		<SimpleData name="lat">54.6810562690033</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.817997681286,54.6810562690033,716.115213437911</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

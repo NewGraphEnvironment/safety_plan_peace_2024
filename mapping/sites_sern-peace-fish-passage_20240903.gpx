@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.5.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="54.485632167842518" minlon="-122.989984554109469" maxlat="54.954937554789240" maxlon="-121.803063353279299"/></metadata>              
+<wpt lat="54.485632167842518" lon="-121.803063353279299">
+  <name>125000</name>
+  <desc>4.8km of bt rearing habitat.High priority candidate for restoration. Good habitat.  Surveyed upstream continuosly for 350 m to beaver influenced wetland area where walking became difficult.  Then stream was visited again upstream at 1.6 km upstream from crossing then again at approximately 2.5 km upstream of crossing.  Undercut banks provide areas of deep cover ad Large woody debris is scattered througout. Overhanging vegetationalso provides cover througout.  Pools observed were somewhat shallow but were preseetevery 20 - 30 m or so.  Minnowtrapping conducted upstream and downstream of crossing.  Electrofishing conducted downstream of the crossing.  No fish captured upstream of the culvert. First beaver dam located approximately 330m upstream of the culvert.</desc>
+</wpt>
+<wpt lat="54.61806461839965" lon="-121.911202637053819">
+  <name>125179</name>
+  <desc>0.9km of bt rearing habitat.High priority candidate for restoration with habitat for rearing and overwintering upstream.  Surveyed upstream for 520 m with no barriers to fish passage present.  Bull trout and rainbow recorded upstream. Some deep pools for overwintering and rearing.  Large woody debris and undercut banks throughout. Sections of gravel suitable for spawning.  Good flow.  Surveyed downstream for 360 m. No barriers observed and none likely downstream of surveyed section due to gradients.  Abundant large woody debris and gravels suitable for spawning.</desc>
+</wpt>
+<wpt lat="54.620060382339872" lon="-121.921106672801884">
+  <name>125180</name>
+  <desc>1.3km of bt rearing habitat.High priority candidate for restoration. Good habitat.  Surveyed upstream of PSCIS crossing 125186 for a distance of 515 m.  Good flow and abundant cover.  Large woody debris and pools throughout.  Frequet pockets of gravel suitable for spawning. Good candidate.</desc>
+</wpt>
+<wpt lat="54.731056210880418" lon="-122.224130296425841">
+  <name>125231</name>
+  <desc>0.4km of bt rearing habitat.High priority candidate for restoration. Good habitat.  Surveyed for 600m to new bridge (modelled crossing 16603641).  Some deep pools and bounlders, udercut banks, gravels throughout.  Abundant large wody debris throughout.  Some debris steps from 30 - 70 cms high.  No barriers.  Rainbow trout known upstream (FIDQ 2020). Good candidate for rehabilitation.</desc>
+</wpt>
+<wpt lat="54.755980215328577" lon="-122.462359989648888">
+  <name>125261</name>
+  <desc>14.4km of bt rearing habitat.Two additional culverts at 0.9m diameter.</desc>
+</wpt>
+<wpt lat="54.95493755478924" lon="-122.989984554109469">
+  <name>198667</name>
+  <desc>18.8km of bt rearing habitat.Grate on inlet and beaver influenced wetland upstream.  Inlet blocked by beaver debris with beaver trap on inlet.  Potentially good candidate for leveler to maintain beaver activity without attempting to remove the animals. Ministry of Transportation chris_culvert_id: 1997066. 13:04:57</desc>
+</wpt>
+<wpt lat="54.937294715640711" lon="-122.969239132170699">
+  <name>198668</name>
+  <desc>0.6km of bt rearing habitat.Abundant gravels, suitable for spawning upstream. Although flows are minimal, the streams does still have water.  Models as having over 3 km of habitat upstream below 5%. Although no fish are recorded as present upstream it seems highly likely that this would be a fish bearing stream. Outlet drop is 80cm.  Steep section of pipe at the inlet recorded as inlet drop. Ministry of Transportation chris_culvert_id: 1996852. 13:40:04</desc>
+</wpt>
+<wpt lat="54.681056269003264" lon="-122.81799768128576">
+  <name>198692</name>
+  <desc>2.3km of bt rearing habitat.Nice little stream with decent flow for this time of year. Pockets of gravel throughout and healthy shrub and mixed riparian. Fish presence unknown, but seems likely due to proximity to Kerry lake with low gradients. 17:14:13</desc>
+</wpt>
+</gpx>
