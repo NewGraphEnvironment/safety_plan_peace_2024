@@ -8,8 +8,8 @@ output:
 links-to-footnotes: false
 paged-footnotes: false
 params:
-  repo_url: 'https://github.com/NewGraphEnvironment/mybookdown-template/'
-  report_url: 'https://newgraphenvironment.github.io/mybookdown-template'
+  repo_url: 'https://github.com/NewGraphEnvironment/safety_plan_peace_2024'
+  report_url: 'https://newgraphenvironment.github.io/safety_plan_peace_2024'
   update_packages: FALSE
   update_bib: TRUE
   gitbook_on: TRUE
@@ -62,7 +62,7 @@ name_pdf <- 'safety_plan'
 name_project_complete <- paste0(name_project_number, '-', name_project_name)
 
 link_repo <- paste0('https://newgraphenvironment.github.io/', name_repo, '/')
-link_kml <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/mapping/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip')
+link_kml <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/mapping')
 link_pdf <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/docs/', name_pdf, '_', name_project_name, '.pdf')
 link_fieldmaps <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/parsnip/'
 
@@ -282,7 +282,7 @@ Field work methods will result in products feeding reporting formats such as [he
 
 <br>
 
-Presence/absence of fish, species composition/density and distribution limits can be useful for prioritizing which crossings are a best fit for fish passage restoration and help inform follow up monitoring so electrofishing and minnowtrapping may be conducted. Standard Fish and Fish Habitat Inventory Standard Field Form [site cards](https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems) are used to gather habitat data, and the Field Guide to these site cards can be found [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf).
+Presence/absence of fish, species composition/density and distribution limits can be useful for prioritizing which crossings are a best fit for fish passage restoration and help inform follow up monitoring so electrofishing and minnowtrapping may be conducted. Standard Fish and Fish Habitat Inventory Standard Field Form [site cards](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/scf.pdf) are used to gather habitat data, and the Field Guide to these site cards can be found [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf).
 
 <br>
 
@@ -344,26 +344,6 @@ knitr::include_graphics("fig/flow-check-in-fail.png")
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br>")`
 
-```{r load-mergin, results='hide', eval = F}
-
-## We did not have a planning.gpkg for the 2024 so we just pulled our potential sizes from bcfishpass, see next code chunk. 
-
-# grab the geopackage from the mergin project 
-
-mergin_name <- 'sern_peace_fwcp_2023'
-
-
-table_sites <- sf::st_read(
-  paste0('../../gis/',
-         mergin_name,
-         '/planning_20230720.gpkg')
-  ) |>  
-  filter(my_priority == 'High' | my_priority == 'Moderate') |>  
-  rename(id = aggregated_crossings_id) |>  
-  select(id, utm_easting, utm_northing, bt_network_km, bt_spawning_km, bt_rearing_km, watershed_group_code, pscis_assessment_comment, my_priority, my_priority_comments, gnis_stream_name)
-
-```
-
 ```{r load-bcfishpass}
 
 ## We did not have a planning.gpkg for the 2024 (see code chunk above) so we just pulled our potential sites from bcfishpass.
@@ -405,6 +385,10 @@ table_sites <- fpr::fpr_db_query(
   sf::st_transform(crs = 4326) |> 
   fpr::fpr_sp_assign_latlong(col_lon = "long") |> 
   arrange(id)
+
+
+# Burn to csv for site table
+table_sites |>  write_csv("data/fish_sampling_sites.csv")
 ```
 
 
@@ -436,7 +420,7 @@ table_sites |>
 
 ##now we will zip up the kml files in the mapping folder and burn to the docs folder (and rename with kmz, it does not work to zip to kmz!!)
 files_to_zip <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$"))  ##this will zip all kmls in file so watch out
-zip::zipr(paste0("docs/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '_kml.zip'), files = files_to_zip)  ##it does not work to zip to kmz!!
+zip::zipr(paste0("mapping/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '_kml.zip'), files = files_to_zip)  ##it does not work to zip to kmz!!
 
 
 ```
@@ -488,55 +472,6 @@ mymap
 ```
 
 <br>
-
-
-```{r import-fish-sites, results='hide',eval=F}
-
-## Aug 2024
-## We have already done this step in load-bcfishpass so we don't need to run it again. Leaving it here in case we need it in the future.
-## We will just burn `sites_for_review` to "data/fish_sampling_sites.csv"
-
-table_sites |>  write_csv("data/fish_sampling_sites.csv")
-
-
-## NOT run in 2024
-# import potential fish sampling sites from the database and burn to csv
-# turned off because only need to run once
-
-conn <- fpr::fpr_db_conn()
-
-ids <- c(
-  #arctic
-  125000, 
-  #fern
-  125261, 
-  # table 21k
-  125231,
-  #missinka remediated
-  125179,
-  ##missinka reference
-  125180,
-  ##trib to Kerry Lake where BCTS is deactivating.  Good flow
-  198692,
-  ##trib to McLeod with large outlet, ok flow and decent looking habitat. On reserve and close to community
-  198668,
-  ##trib to McLeod Lake right at the store and walking distance from community.  
-  ## good site for sampling to get people interested
-  #large outlet drop, ok flow and decent looking habitat. On reserve
-  198667
-  )
-
-bcfishpass <- fpr::fpr_db_query(
-glue::glue_sql("SELECT * FROM bcfishpass.crossings_vw WHERE stream_crossing_id IN ({ids*})", .con = conn)) |> 
-  select(id = stream_crossing_id, stream_name = gnis_stream_name, utm_easting, utm_northing, pscis_assessment_comment) |>    
-         # bt_network_km, bt_spawning_km, bt_rearing_km,
-         # mapsheet = dbm_mof_50k_grid,
-         # watershed_group_code, pscis_assessment_comment,
-  st_drop_geometry()
-
-bcfishpass |>  write_csv("data/fish_sampling_sites.csv")
-```
-
 
 ```{r tab-electrofishing-sites}
 
