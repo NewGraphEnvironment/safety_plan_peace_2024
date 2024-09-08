@@ -176,20 +176,33 @@ tab_crew |>
 
 ## Equipment Checklists {.unnumbered}
 
-```{r table-equipment, eval=TRUE}
+PLEASE NOTE THAT EQUIPMENT CHECKLISTS ARE PROVIDED FOR THE OVERALL TEAM AND NOT ALL CREWS ARE REQUIRED TO HAVE ALL EQUIPMENT.  ALTHOUGH ENCOURAGED FOR ALL ENVIRONMENTAL SCIENCE TECHNICIANS AND MONITORS TO HAVE THE PERSONAL EQUIPMENT NEW GRAPH ENVIRONMENT WILL HAVE ALL EQUIPMENT NECESSARY TO COMPLETE THE WORK.  
 
+<br>
+
+
+MINIMUM REQUIREMENTS FOR EACH CREW MEMBER INCLUDES GOOD QUALITY AND APPROPRIATELY FITTING LIGHT WEIGHT WADERS AND SEPERATE WADING BOOTS (RUBBER SOLED), HAT, WATER AND A FOOD.  
+
+<br>
+
+
+MINIMUM REQUIREMENTS FOR FIELD TRUCKS INCLUDE A QUALITY RADIO APPROPRIATE FOR FOREST SERVICE ROADS, OFF-ROAD CAPABLE TIRES IN GOOD CONDITION, SPARE TIRE, JACK, AND TOOLS.
+
+```{r table-equipment, eval=TRUE}
+eq <- readr::read_csv(
+  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
+  )
+)
 ## personal equipment 
 
-tab_eq_pers <-  readr::read_csv(
-  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
-  ))|> 
+tab_eq_pers <-  eq |> 
   filter(!is.na(eq_pers_standard)) |>  
   arrange(eq_safety) |>  ##have these first on the list
   select(eq_item)  |>  
   my_untidy_table() |>  
-  rename(`Personal Equipment Checklist` = eq_item)
+  rename(Equipment = eq_item)
 
-my_caption = 'Personal Equipment Checklist'
+my_caption = 'Personal Equipment Checklist - SEE NOTE ABOVE FOR MINIMUM REQUIREMENTS'
 
 tab_eq_pers |>  
   kable(caption = my_caption, label = NA) |>  
@@ -203,9 +216,7 @@ tab_eq_pers |>
 ```{r equip-crew}
 
 ##equipment for the crew
-tab_eq_crew <-  readr::read_csv(
-  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
-  ))|>
+tab_eq_crew <-  eq |>
   filter(if_any(starts_with('eq_task'), ~ . == 'fish passage')) |>  
   filter(is.na(eq_pers_standard)) |>  
   arrange(eq_safety) |>  
@@ -213,7 +224,7 @@ tab_eq_crew <-  readr::read_csv(
   my_untidy_table() |>  
   rename(`Crew Equipment Checklist` = eq_item)
 
-my_caption = 'Crew Equipment Checklist'
+my_caption = 'Crew Equipment Checklist - SEE NOTE ABOVE FOR MINIMUM REQUIREMENTS'
 
 tab_eq_crew |>  
   kable(caption = my_caption, label = NA) |>    
@@ -223,7 +234,25 @@ tab_eq_crew |>
 
 ```
 
-<br><br>
+<br>
+
+
+```{r equip-truck}
+
+my_caption = 'Truck Equipment Checklist - SEE NOTE ABOVE FOR MINIMUM REQUIREMENTS'
+
+##equipment for the crew
+eq |> 
+  filter(eq_truck == 'x') |>  
+  filter(is.na(eq_pers_standard)) |>  
+  arrange(eq_safety) |>  
+  select(eq_item)  |>  
+  my_untidy_table() |>  
+  rename(Equipment = eq_item) |> 
+  fpr::fpr_kable(caption = my_caption)
+
+```
+
 
 ## Nearest Hospitals {.unnumbered}
 
