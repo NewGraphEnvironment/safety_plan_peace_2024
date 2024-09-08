@@ -249,7 +249,7 @@ eq |>
   select(eq_item)  |>  
   my_untidy_table() |>  
   rename(Equipment = eq_item) |> 
-  fpr::fpr_kable(caption = my_caption)
+  fpr::fpr_kable(caption = my_caption, scroll = FALSE)
 
 ```
 
