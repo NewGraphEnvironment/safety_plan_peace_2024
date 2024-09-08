@@ -409,6 +409,7 @@ table_sites <- fpr::fpr_db_query(
 
 ```{r gpx-kml-clean}
 # because we rebuild everytime we need to remove the old files so we don't
+# zip up old files
 
 ##identify the old zip
 fs::file_delete(
@@ -419,8 +420,6 @@ fs::file_delete(
 fs::file_delete(
   fs::dir_ls(path = "mapping", glob = "*.gpx|*.kml")
 )
-  
-
 ```
 
 
