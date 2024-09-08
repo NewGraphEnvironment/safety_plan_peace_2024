@@ -450,8 +450,6 @@ table_sites |>
 
 
 ##now we will zip up the kml files in the mapping folder and burn to the docs folder (and rename with kmz, it does not work to zip to kmz!!)
-files_to_zip <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$"))  
-
 files_to_zip <- fs::dir_ls(path = "mapping", glob = "*.kml|*.gpx")
 
 
