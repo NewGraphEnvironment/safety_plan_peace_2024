@@ -62,7 +62,7 @@ name_pdf <- 'safety_plan'
 name_project_complete <- paste0(name_project_number, '-', name_project_name)
 
 link_repo <- paste0('https://newgraphenvironment.github.io/', name_repo, '/')
-link_kml <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/mapping/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip')
+link_kml <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/docs/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip')
 link_pdf <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/docs/', name_pdf, '_', name_project_name, '.pdf')
 link_fieldmaps <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/parsnip/'
 
@@ -407,6 +407,21 @@ table_sites <- fpr::fpr_db_query(
   arrange(id)
 ```
 
+```{r gpx-kml-clean}
+# because we rebuild everytime we need to remove the old files so we don't
+
+##identify the old zip
+fs::file_delete(
+  fs::dir_ls(path = "docs", glob = "*.zip")
+)
+
+
+fs::file_delete(
+  fs::dir_ls(path = "mapping", glob = "*.gpx|*.kml")
+)
+  
+
+```
 
 
 ```{r gpx, results='hide'}
@@ -435,8 +450,16 @@ table_sites |>
 
 
 ##now we will zip up the kml files in the mapping folder and burn to the docs folder (and rename with kmz, it does not work to zip to kmz!!)
-files_to_zip <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$"))  ##this will zip all kmls in file so watch out
-zip::zipr(paste0("docs/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '_kml.zip'), files = files_to_zip)  ##it does not work to zip to kmz!!
+files_to_zip <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$"))  
+
+files_to_zip <- fs::dir_ls(path = "mapping", glob = "*.kml|*.gpx")
+
+
+##it does not work to zip to kmz and you can't donwload a kmkl from github so we zip to .zip
+zip::zipr(
+  paste0('docs/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip'), 
+  files = files_to_zip
+  )  
 
 
 ```
