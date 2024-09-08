@@ -94,6 +94,7 @@ projects <-  readxl::excel_sheets(path = "../onboarding/data/equipment_contacts_
   purrr::map(fpr::fpr_sheet_trim) |>  #this is the clean run of this function at_trim_xlsheet
   purrr::map(plyr::colwise(type.convert))
 
+
 ```
 
 
@@ -151,9 +152,7 @@ New Graph Employees Al Irvine and Lucy Schick will be joined by crews from McLoe
 ```{r tab-crew}
 crew_ids <- c('airvine', 
               'lschick', 
-              'nprince', 
-              'espence',
-              'eisadore',
+              'jisadore',
               'tsalonas',
               'bprince',
               'jdemont')
